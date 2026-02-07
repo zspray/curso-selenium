@@ -1,10 +1,10 @@
-	package br.ce.wcaquino.test;
 import static br.ce.wcaquino.core.DriverFactory.getDriver;
 
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,12 +13,11 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
-import br.ce.wcaquino.core.BaseTest;
 import br.ce.wcaquino.core.DSL;
-import br.ce.wcaquino.page.CampoTreinamentoPage;
+import br.ce.wcaquino.core.DriverFactory;
 
 @RunWith(Parameterized.class)
-public class TesteRegrasCadastro extends BaseTest {
+public class TesteRegrasCadastro {
 
 	private DSL dsl;
 	private CampoTreinamentoPage page;
@@ -42,6 +41,11 @@ public class TesteRegrasCadastro extends BaseTest {
 		getDriver().get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
 		dsl = new DSL();
 		page = new CampoTreinamentoPage();
+	}
+	
+	@After
+	public void finaliza(){
+		DriverFactory.killDriver();
 	}
 	
 	@Parameters
