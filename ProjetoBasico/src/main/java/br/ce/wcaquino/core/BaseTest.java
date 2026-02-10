@@ -17,10 +17,10 @@ import org.openqa.selenium.TakesScreenshot;
 import br.ce.wcaquino.pages.LoginPage;
 
 public class BaseTest {
+	private LoginPage page = new LoginPage();
+	
 	@Rule
 	public TestName testName = new TestName();
-	
-	private LoginPage page = new LoginPage();
 	
 	@Before
 	public void inicializa(){

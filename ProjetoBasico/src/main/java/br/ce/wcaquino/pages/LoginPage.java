@@ -1,12 +1,14 @@
 package br.ce.wcaquino.pages;
 
+import org.openqa.selenium.By;
+
 import br.ce.wcaquino.core.BasePage;
 import br.ce.wcaquino.core.DriverFactory;
 
 public class LoginPage extends BasePage {
 	
 	public void acessarTelaInicial(){
-		DriverFactory.getDriver().get("https://seubarriga.wcaquino.me");
+		DriverFactory.getDriver().get("https://seubarriga.wcaquino.me/login");
 	}
 	
 	public void setEmail(String email) {
@@ -25,10 +27,6 @@ public class LoginPage extends BasePage {
 		setEmail(email);
 		setSenha(senha);
 		entrar();
-	}
-	
-	public void resetar(){
-		clicarLink("reset");
 	}
 
 }

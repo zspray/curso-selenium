@@ -19,7 +19,7 @@ public class MovimentacaoTest extends BaseTest {
 	private MovimentacaoPage movPage = new MovimentacaoPage();
 
 	@Test
-	public void test1InserirMovimentacao(){
+	public void testInserirMovimentacao(){
 		menuPage.acessarTelaInserirMovimentacao();
 		
 		movPage.setDataMovimentacao(obterDataFormatada(new Date()));
@@ -27,7 +27,7 @@ public class MovimentacaoTest extends BaseTest {
 		movPage.setDescricao("Movimentação do Teste");
 		movPage.setInteressado("Interessado Qualquer");
 		movPage.setValor("500");
-		movPage.setConta("Conta para movimentacoes");
+		movPage.setConta("Conta do Teste alterada");
 		movPage.setStatusPago();
 		movPage.salvar();
 		
@@ -35,7 +35,7 @@ public class MovimentacaoTest extends BaseTest {
 	}
 	
 	@Test
-	public void test2CamposObrigatorios(){
+	public void testCamposObrigatorios(){
 		menuPage.acessarTelaInserirMovimentacao();
 		
 		movPage.salvar();
@@ -50,7 +50,7 @@ public class MovimentacaoTest extends BaseTest {
 	}
 	
 	@Test
-	public void test3InserirMovimentacaoFutura(){
+	public void testInserirMovimentacaoFutura(){
 		menuPage.acessarTelaInserirMovimentacao();
 		
 		Date dataFutura = DataUtils.obterDataComDiferencaDias(5);
@@ -60,7 +60,7 @@ public class MovimentacaoTest extends BaseTest {
 		movPage.setDescricao("Movimentação do Teste");
 		movPage.setInteressado("Interessado Qualquer");
 		movPage.setValor("500");
-		movPage.setConta("Conta para movimentacoes");
+		movPage.setConta("Conta do Teste alterada");
 		movPage.setStatusPago();
 		movPage.salvar();
 		
